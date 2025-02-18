@@ -1,0 +1,35 @@
+digraph pastafarianism {
+ordering=out;
+graph [fontname="times-roman"];
+node [fontname="times-roman"];
+edge [fontname="times-roman"];
+"Pickup Behavior" [fillcolor=orange, fontcolor=black, fontsize=9, label="Ⓜ Pickup Behavior", shape=box, style=filled];
+Inverter [fillcolor=ghostwhite, fontcolor=black, fontsize=9, label=Inverter, shape=ellipse, style=filled];
+"Pickup Behavior" -> Inverter;
+"Both objects done?" [fillcolor=gray, fontcolor=black, fontsize=9, label="Both objects done?", shape=ellipse, style=filled];
+Inverter -> "Both objects done?";
+"Set next point" [fillcolor=gray, fontcolor=black, fontsize=9, label="Set next point", shape=ellipse, style=filled];
+"Pickup Behavior" -> "Set next point";
+"Move to next point" [fillcolor=gray, fontcolor=black, fontsize=9, label="Move to next point", shape=ellipse, style=filled];
+"Pickup Behavior" -> "Move to next point";
+"Check object" [fillcolor=gray, fontcolor=black, fontsize=9, label="Check object", shape=ellipse, style=filled];
+"Pickup Behavior" -> "Check object";
+"Get object" [fillcolor=gray, fontcolor=black, fontsize=9, label="Get object", shape=ellipse, style=filled];
+"Pickup Behavior" -> "Get object";
+Selector [fillcolor=cyan, fontcolor=black, fontsize=9, label="Ⓜ Selector", shape=octagon, style=filled];
+"Pickup Behavior" -> Selector;
+Sequence [fillcolor=orange, fontcolor=black, fontsize=9, label="Ⓜ Sequence", shape=box, style=filled];
+Selector -> Sequence;
+"Object is beer?" [fillcolor=gray, fontcolor=black, fontsize=9, label="Object is beer?", shape=ellipse, style=filled];
+Sequence -> "Object is beer?";
+"Set drop-off point for beer" [fillcolor=gray, fontcolor=black, fontsize=9, label="Set drop-off point for beer", shape=ellipse, style=filled];
+Sequence -> "Set drop-off point for beer";
+"Set drop-off point for coke" [fillcolor=gray, fontcolor=black, fontsize=9, label="Set drop-off point for coke", shape=ellipse, style=filled];
+Selector -> "Set drop-off point for coke";
+"Move to drop-off" [fillcolor=gray, fontcolor=black, fontsize=9, label="Move to drop-off", shape=ellipse, style=filled];
+"Pickup Behavior" -> "Move to drop-off";
+"Let object" [fillcolor=gray, fontcolor=black, fontsize=9, label="Let object", shape=ellipse, style=filled];
+"Pickup Behavior" -> "Let object";
+"Objects done +1" [fillcolor=gray, fontcolor=black, fontsize=9, label="Objects done +1", shape=ellipse, style=filled];
+"Pickup Behavior" -> "Objects done +1";
+}
